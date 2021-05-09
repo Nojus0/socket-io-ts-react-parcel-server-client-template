@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-client": "cd .\\Client-Vanilla-Ts\\ & npm start",
-    "start-server": "cd .\\Server-Ts\\ & npm start"
+    "start-server": "cd .\\Server-Ts\\ & npm start",
+    "install": "cd Server-Ts & npm i & cd.. & cd Client-Vanilla-Ts & npm i"
   },
   "keywords": [],
   "author": "",
