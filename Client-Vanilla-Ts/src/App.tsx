@@ -1,11 +1,17 @@
-import React, { useContext } from 'react'
-import { WSContext } from "./WSContext"
-
+import React, { useEffect, useState } from 'react'
+import { io } from "./SOCKETS"
 function App() {
-    const { IsConnected: [conn] } = useContext(WSContext);
+    const [conn, setConn] = useState(io.connected);
+
+    useEffect(() => {
+        io.on("connect", () => {
+            setConn(true);
+        })
+    }, [])
+    
     return (
         <div>
-            <h1>You are {conn ? "connected" : "disconnected"}</h1>
+            <h1>You are {io.connected ? "connected" : "disconnected"}</h1>
         </div>
     )
 }

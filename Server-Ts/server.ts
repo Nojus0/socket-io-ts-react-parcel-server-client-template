@@ -9,7 +9,7 @@ const SERVER = new Server(PORT, {
 })
 
 SERVER.on("connection", socket => {
-    console.log(`User connected from ${socket.handshake.address}`);
+    console.log(`User connected from ${socket.handshake.address} ${Math.random()}`);
 
     socket.on("AddPlayer", (e: IAddPlayer) => {
         console.log(`
